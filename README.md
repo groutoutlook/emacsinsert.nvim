@@ -4,41 +4,41 @@ Readline motions and deletions in Neovim.
 
 ## Supported Readline commands
 
-| Readline command             | RL shortcut | readline.nvim function / Vim command |
-| ---------------------------- | ----------- | ------------------------------------ |
-| `kill-line`                  | `C-k`       | `kill_line`                          |
-| `backward-kill-line`         | `C-u`       | `backward_kill_line`                 |
-| `kill-word`                  | `M-d`       | `kill_word`                          |
-| `backward-kill-word`         | `M-BS`      | `backward_kill_word`                 |
-| `unix-word-rubout`           | `C-w`       | `unix_word_rubout`                   |
-| `delete-char`                | `C-d`       | `<Delete>`                           |
-| `backward-delete-char`       | `C-h`       | `<BS>`                               |
-| `beginning-of-line`          | `C-a`       | `beginning_of_line`                  |
-| `back-to-indentation`        | `M-m`       | `back_to_indentation`                |
-| `end-of-line`                | `C-e`       | `end_of_line`                        |
-| `forward-word`               | `M-f`       | `forward_word`                       |
-| `backward-word`              | `M-b`       | `backward_word`                      |
-| `forward-char`               | `C-f`       | `<Right>`                            |
-| `backward-char`              | `C-b`       | `<Left>`                             |
-| `next-line`                  | `C-n`       | `<Down>`                             |
-| `previous-line`              | `C-p`       | `<Up>`                               |
-| `transpose-chars`            | `C-t`       | [Ask if desired][issues]             |
-| `transpose-words`            | `M-t`       | [Ask if desired][issues]             |
-| `quoted-insert`              | `C-v`       | `<C-v>`                              |
-| `yank` (called `put` in Vim) | `C-y`       | [Ask if desired][issues]             |
-| `yank-pop`                   | `M-y`       | [Ask if desired][issues]             |
-| `undo`                       | `C-_`       | [Ask if desired][issues]             |
-| `upcase-word`                | `M-u`       | [Ask if desired][issues]             |
-| `downcase-word`              | `M-l`       | [Ask if desired][issues]             |
-| `capitalize-word`            | `M-c`       | [Ask if desired][issues]             |
+| Readline command             | RL shortcut | EmacsInsert.nvim function / Vim command |
+| ---------------------------- | ----------- | --------------------------------------- |
+| `kill-line`                  | `C-k`       | `kill_line`                             |
+| `backward-kill-line`         | `C-u`       | `backward_kill_line`                    |
+| `kill-word`                  | `M-d`       | `kill_word`                             |
+| `backward-kill-word`         | `M-BS`      | `backward_kill_word`                    |
+| `unix-word-rubout`           | `C-w`       | `unix_word_rubout`                      |
+| `delete-char`                | `C-d`       | `<Delete>`                              |
+| `backward-delete-char`       | `C-h`       | `<BS>`                                  |
+| `beginning-of-line`          | `C-a`       | `beginning_of_line`                     |
+| `back-to-indentation`        | `M-m`       | `back_to_indentation`                   |
+| `end-of-line`                | `C-e`       | `end_of_line`                           |
+| `forward-word`               | `M-f`       | `forward_word`                          |
+| `backward-word`              | `M-b`       | `backward_word`                         |
+| `forward-char`               | `C-f`       | `<Right>`                               |
+| `backward-char`              | `C-b`       | `<Left>`                                |
+| `next-line`                  | `C-n`       | `<Down>`                                |
+| `previous-line`              | `C-p`       | `<Up>`                                  |
+| `transpose-chars`            | `C-t`       | [Ask if desired][issues]                |
+| `transpose-words`            | `M-t`       | [Ask if desired][issues]                |
+| `quoted-insert`              | `C-v`       | `<C-v>`                                 |
+| `yank` (called `put` in Vim) | `C-y`       | [Ask if desired][issues]                |
+| `yank-pop`                   | `M-y`       | [Ask if desired][issues]                |
+| `undo`                       | `C-_`       | [Ask if desired][issues]                |
+| `upcase-word`                | `M-u`       | [Ask if desired][issues]                |
+| `downcase-word`              | `M-l`       | [Ask if desired][issues]                |
+| `capitalize-word`            | `M-c`       | [Ask if desired][issues]                |
 
 References: GNU docs for [moving](https://www.gnu.org/software/bash/manual/html_node/Commands-For-Moving.html), [text](https://www.gnu.org/software/bash/manual/html_node/Commands-For-Text.html), and [killing](https://www.gnu.org/software/bash/manual/html_node/Commands-For-Killing.html); and [Readline on Wikipedia](https://en.wikipedia.org/wiki/GNU_Readline).
 
 ## Supported Emacs commands
 
-| Emacs command                        | Emacs shortcut | readline.nvim function |
-| ------------------------------------ | -------------- | ---------------------- |
-| [`back-to-indentation`][emacsindent] | `M-m`          | `back_to_indentation`  |
+| Emacs command                        | Emacs shortcut | EmacsInsert.nvim function |
+| ------------------------------------ | -------------- | ------------------------- |
+| [`back-to-indentation`][emacsindent] | `M-m`          | `back_to_indentation`     |
 
 [emacsindent]: https://www.gnu.org/software/emacs/manual/html_node/emacs/Indentation-Commands.html
 
@@ -83,7 +83,7 @@ If neither of the above is set, we fall back to `readline.default_word_chars`, w
 
 ### Maximal
 
-This config creates Neovim mappings for all of the default Readline text-editing shortcuts, minus ones readline.nvim doesn't (yet) have support for, for example `transpose-chars` and `capitalize-word`. You can copy-paste this block into your `init.lua` and delete the mappings you don't want.
+This config creates Neovim mappings for all of the default Readline text-editing shortcuts, minus ones EmacsInsert.nvim doesn't (yet) have support for, for example `transpose-chars` and `capitalize-word`. You can copy-paste this block into your `init.lua` and delete the mappings you don't want.
 
 ```lua
 local readline = require 'readline'
@@ -106,5 +106,5 @@ vim.keymap.set('!', '<C-p>', '<Up>')    -- previous-line
 
 ## Similar plugins
 
-- https://github.com/tpope/vim-rsi
-- https://github.com/ryvnf/readline.vim
+- [vim-rsi](https://github.com/tpope/vim-rsi)
+- [readline.vim](https://github.com/ryvnf/readline.vim)
