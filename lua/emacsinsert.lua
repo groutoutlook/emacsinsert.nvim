@@ -552,4 +552,16 @@ function emacsinsert.dwim_backward_kill_line()
 	kill_to(dwim_beginning_of_line_pos(true))
 end
 
+-- INFO: forward_paragraph and backward_paragraph.
+--
+function emacsinsert.forward_paragraph()
+	vim.cmd([[ normal! }]])
+	-- normal
+end
+
+function emacsinsert.backward_paragraph()
+	vim.cmd([[ normal! {]])
+	-- normal
+end
+
 return emacsinsert
