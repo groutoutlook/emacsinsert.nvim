@@ -32,4 +32,4 @@ run args=default_args:
 
 alias b := build
 build: 
-    Copy-Item ./lua "C:\Users\COHOTECH\AppData\Local\nvim-data\lazy\emacsinsert.nvim" -Recurse -Force
+    Copy-Item ./lua "$env:LOCALAPPDATA\nvim-data\lazy\emacsinsert.nvim" -Recurse -Force

@@ -32,6 +32,13 @@ Readline motions and deletions in Neovim.
 | `downcase-word`              | `M-l`       | [Ask if desired][issues]                |
 | `capitalize-word`            | `M-c`       | [Ask if desired][issues]                |
 
+## WIP
+
+| Emacs command        | Emacs shortcut | EmacsInsert.nvim function |
+| -------------------- | -------------- | ------------------------- |
+| `backward-paragraph` | `C-Up`         | `backward_paragraph`      |
+| `forward-paragraph`  | `C-Down`       | `forward_paragraph`       |
+
 References: GNU docs for [moving](https://www.gnu.org/software/bash/manual/html_node/Commands-For-Moving.html), [text](https://www.gnu.org/software/bash/manual/html_node/Commands-For-Text.html), and [killing](https://www.gnu.org/software/bash/manual/html_node/Commands-For-Killing.html); and [Readline on Wikipedia](https://en.wikipedia.org/wiki/GNU_Readline).
 
 ## Supported Emacs commands
