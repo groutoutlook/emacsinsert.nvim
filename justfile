@@ -29,8 +29,7 @@ default_args := 'args here'
 run args=default_args:
     @Write-Host {{default_args}} -ForegroundColor Red
     kill -Name nvim*
-    :vl
-    
+    nvim -c "lua require('resession').load 'Last Session'"    
 
 
 alias b := build
